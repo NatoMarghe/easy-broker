@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 8230
+
+app:
+  name: EasyBroker API
+
+  easybroker:
+    url: https://api.stagingeb.com/v1/
