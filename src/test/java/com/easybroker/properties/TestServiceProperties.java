@@ -1,14 +1,11 @@
 package com.easybroker.properties;
 
-import com.easybroker.properties.dto.ContentPropertieResponse;
 import com.easybroker.properties.dto.EasyBrokerPropertieResponse;
 import com.easybroker.properties.service.PropertieService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 public class TestServiceProperties {
 
