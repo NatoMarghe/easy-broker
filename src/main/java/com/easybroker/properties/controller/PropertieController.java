@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/easybroker/internal/v1/propertie")
 public class PropertieController {
@@ -18,7 +21,9 @@ public class PropertieController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<EasyBrokerPropertieResponse> getAllProperties() throws Exception {
-        return propertieService.getAllProperties();
+    public List<String> getAllProperties() throws Exception {
+        ResponseEntity<EasyBrokerPropertieResponse> result = propertieService.getAllProperties();
+        List<String> titles =  result.getBody().getContent().stream().map(op -> op.getTitle()).collect(Collectors.toList());
+        return titles;
     }
 }
